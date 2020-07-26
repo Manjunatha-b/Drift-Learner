@@ -34,3 +34,11 @@ This is the AI driving the grippy car. Very wonky controls.<br/>
 <img src="https://github.com/Manjunatha-b/Drift-Learner/blob/master/Aidriving.gif" width="800">
 <br/>
 Will get back to this project after learning some more about reinforcement learning.
+
+###Ideas List when i get back:
+1. Increase decision interval
+1. Curriculum Learning from grippy to drifty
+1. Curriculum Learning for brake strength
+1. Action smoothing, reward if similar to previous state.
+1. Learn RAINBOW and get back.
+1. CNN input when i get stronger laptop
