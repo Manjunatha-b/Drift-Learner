@@ -4,16 +4,22 @@
 ## Introduction & Details :
 Project was aimed at making a reinforcement learning algorithm capable of driving a drifty car.<br/><br/>
 **AI Based details:**
-1. A game environment was developed with car physics, drifting, skidmarks and anti roll mechanics.<br/>
-1. Reset mechanics were introduced to speedup the process if the AI ended up getting the car stuck such as flipover / crash.<br/>
-1. Added penalty for mean square distance, angular difference and collision with mountain.
+1. A game environment was developed with car physics, drifting, skidmarks and anti roll mechanics.
+1. Reset mechanics were introduced to speedup the process 
+    * Resets if the car flips
+    * Resets if the car crashes
+    * Resets if it doesn't reach the next checkpoint in time.
+1. Added penalty for 
+    * mean square distance
+    * angular difference 
+    * collision with mountain.
 1. Added waypoints along the road for the AI to reach and obtain reward. waypoint colliders were created dynamically during execution calculating the front facing vector using the perpendicular vector formula to the guiding spline<br/>
 1. Used coordinates of next 3 closest waypoints, velocity of the car and depth rays as input.
 1. Created two types of cars, drifty and grippy based on wheel physics settings.
 1. Since neither of the two cars were learning a **shuffle algorithm was added which spawned the car at random points along the track**
 1. Both were left to train overnight ~12 hours with 4x instances of the game
 1. Experimented with imitation learning
-1. **Only the grippy car was able to learn anything substantial**
+1. **Only the car with high grip coefficient on the tires was able to learn anything substantial**
 
 **Graphics based details:**
 1. Introduced occlusion culling which sent framerate up to about ~45
@@ -23,7 +29,7 @@ Project was aimed at making a reinforcement learning algorithm capable of drivin
 
 
 <br/>
-The project was slightly *ambitious* and went through many changes and one hard reset<br/>
+The project was slightly *ambitious* and went through many changes with one hard reset<br/>
 
 
 ## Example of its working 
@@ -35,10 +41,10 @@ This is the AI driving the grippy car. Very wonky controls.<br/>
 <br/>
 Will get back to this project after learning some more about reinforcement learning.
 
-###Ideas List when i get back:
-1. Increase decision interval
-1. Curriculum Learning from grippy to drifty
-1. Curriculum Learning for brake strength
+### Todo:
+1. Increase decision interval.
+1. Curriculum Learning from grip to drift coefficients.
+1. Curriculum Learning for brake strength.
 1. Action smoothing, reward if similar to previous state.
-1. Learn RAINBOW and get back.
-1. CNN input when i get stronger laptop
+1. Learn RAINBOW.
+1. CNN input.
