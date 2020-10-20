@@ -14,10 +14,15 @@ Project was aimed at making a reinforcement learning algorithm capable of drivin
     * angular difference 
     * collision with mountain.
 1. Added waypoints along the road for the AI to reach and obtain reward. waypoint colliders were created dynamically during execution calculating the front facing vector using the perpendicular vector formula to the guiding spline<br/>
-1. Used coordinates of next 3 closest waypoints, velocity of the car and depth rays as input.
-1. Created two types of cars, drifty and grippy based on wheel physics settings.
+1. Observations for input: 
+      * the next 3 waypoints
+      * velocity of the car 
+      * depth raycasts from the car's roof slightly pointed towards the ground
+1. Created two types ofbased on wheel physics settings:
+      * highly gripping car, with very responsive control
+      * highly drifty car, with low responsive control
 1. Since neither of the two cars were learning a **shuffle algorithm was added which spawned the car at random points along the track**
-1. Both were left to train overnight ~12 hours with 4x instances of the game
+1. Both were left to train overnight ~12 hours with 4x instances of the game running.
 1. Experimented with imitation learning
 1. **Only the car with high grip coefficient on the tires was able to learn anything substantial**
 
